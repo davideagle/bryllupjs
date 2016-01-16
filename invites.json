@@ -1,0 +1,15 @@
+{
+	"invite": "AAAA", 
+	"email" : "undef",
+	"persons": 
+		[
+			{
+				"name": "Davíð Örn Jóhannsson",
+				"registered": false
+			},
+			{
+				"name": "Jana Mare Óskarsdóttir",
+				"registered": false
+			}
+		]
+}
