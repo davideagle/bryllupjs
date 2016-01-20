@@ -9,20 +9,19 @@ module.exports = function(router) {
 	
 	router.post('/invites/register', function(req,res){
 		var email 		= req.body.email;
-       	var invitecode 	= req.body.invitecode;
+       	var invite 	= req.body.invite;
        	
        	console.log(new Date());
 		console.log("GOT POST")
        	console.log(req.body);
        	
-		invites.findOne({'invite': invitecode.toUpperCase()}, function(err, response){
+		invites.findOne({'invite': invite.toUpperCase()}, function(err, response){
 			if(err || response == null){
 				console.log(new Date());
 				console.log("InviteCode Not Found");
 				res.status(401).send("InviteCode Not Found");
 			}
 			else{
-				console.log("hello");
 				response.email = email;				
 				
 				response.save(function(err,b){
@@ -43,11 +42,11 @@ module.exports = function(router) {
 	});
 	
 	router.post('/invites/update', function(req,res){
-		var email 		= req.body.email;
-       	var invitecode 	= req.body.invitecode;
-       	var persons		= req.body.persons;
+		var email 	= req.body.email;
+       	var invite 	= req.body.invite;
+       	var persons	= req.body.persons;
 
-		invites.findOne({'invite': invitecode}, function(err, response){
+		invites.findOne({'invite': invite}, function(err, response){
 			if(err || response == null){
 				console.log(new Date());
 				console.log("InviteCode Not Found");
@@ -56,8 +55,11 @@ module.exports = function(router) {
 			else{
 				
 				response.email = email;
-				response.invitecode = invitecode;
-				response.persons = persons
+				response.invite = invite;
+				response.persons = persons;
+				
+				console.log("About to print response")
+				console.log(response);
 				
 				response.save(function(err,b){
 					if(err){

@@ -1,0 +1,27 @@
+{
+  "name": "bryllupjs",
+  "version": "1.0.0",
+  "description": "bryllup registration",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideagle/bryllupjs.git"
+  },
+  "author": "davideagle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davideagle/bryllupjs/issues"
+  },
+  "homepage": "https://github.com/davideagle/bryllupjs#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "connect": "^3.4.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.5",
+    "morgan": "^1.6.1"
+  }
+}
