@@ -8,7 +8,7 @@ module.exports = function(router) {
 
 	
 	router.post('/invites/register', function(req,res){
-		var email 		= req.body.email;
+		var email 	= req.body.email;
        	var invite 	= req.body.invite;
        	
        	console.log(new Date());
